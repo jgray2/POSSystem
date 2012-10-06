@@ -1,9 +1,6 @@
 package possystem;
 
-/**
- *
- * @author jgray2
- */
+
 public class CashRegister {
 
     Product[] products = {
@@ -16,10 +13,34 @@ public class CashRegister {
         new Customer("C02", "Jim Jones"),
         new Customer("C03", "Sally Fields")
     };
-    private Receipt receipt;
 
-    private void startNewSale(String customerID) {
+    private Receipt receipt;
+    
+    public Product[] getProducts() {
+        return products;
     }
+
+    public Customer[] getCustomers() {
+        return customers;
+    }
+
+    public Receipt getReceipt() {
+        return receipt;
+    }
+ 
+    private void startNewSale(String customerID) {
+        Customer customer = null;
+           for(Customer c : customers) {
+            if(customerID.equals(c.getCustomerID())) {
+                customer = c;
+                break;
+            }
+        }
+        // if found, add the customer to the receipt
+        if(customer != null) {
+            receipt.addCustomer(customer);
+        }  
+   }
 
    public void addItemToSale(String prodId, int qty) {
         Product product = null;
@@ -38,4 +59,6 @@ public class CashRegister {
 
     private void finalizeSale() {
     }
+    
+    
 }

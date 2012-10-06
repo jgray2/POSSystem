@@ -1,8 +1,5 @@
 package possystem;
-/**
- *
- * @author jgray2
- */
+
 public class Product {
     private String prodID;
     private String description;
@@ -49,5 +46,5 @@ public class Product {
         this.discount = discount;
     }
     
-    
+ 
 }

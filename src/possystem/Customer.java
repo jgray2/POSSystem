@@ -1,9 +1,5 @@
 package possystem;
 
-/**
- *
- * @author jgray2
- */
 public class Customer {
     private String customerID;
     private String customerName;

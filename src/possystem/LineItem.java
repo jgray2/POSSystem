@@ -1,12 +1,10 @@
 package possystem;
 
-/**
- *
- * @author jgray2
- */
 public class LineItem {
+
     private Product product;
     private double quantity;
+    private double subtotal;
 
     public LineItem(Product product, double quantity) {
         this.product = product;
@@ -28,7 +26,8 @@ public class LineItem {
     public void setQuantity(double quantity) {
         this.quantity = quantity;
     }
-    
-    
-    
+
+    public double getOriginalPriceSubtotal() {
+        return subtotal = quantity * product.getUnitPrice();
+    }
 }
