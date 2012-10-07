@@ -38,8 +38,8 @@ public class Product {
         this.unitPrice = unitPrice;
     }
 
-    public DiscountStrategy getDiscount() {
-        return discount;
+    public double getDiscount() {
+        return discount.getDiscount(unitPrice);
     }
 
     public void setDiscount(DiscountStrategy discount) {
