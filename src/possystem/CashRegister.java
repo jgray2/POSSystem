@@ -26,7 +26,7 @@ public class CashRegister {
         return receipt;
     }
 
-    private void startNewSale(String customerID) {
+    public void startNewSale(String customerID) {
         Customer customer = null;
         for (Customer c : customers) {
             if (customerID.equals(c.getCustomerID())) {
@@ -54,7 +54,11 @@ public class CashRegister {
         }
     }
 
-    private void finalizeSale() {
-        
+    public void finalizeSale() {
+        receipt.printReceiptLineItems();
+        System.out.println(receipt.getTotalBeforeDiscount());
+        System.out.println("Total: " + receipt.getTotalAfterDiscount());
+        System.out.println("Total Savings: " + receipt.getSavings());
     }
 }
+

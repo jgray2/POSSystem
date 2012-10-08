@@ -10,6 +10,8 @@ public class Receipt {
     private double moneySaved;
     private double saleGrandTotal;
     private double grandTotal;
+    private double unitPrice;
+    private double salePrice;
 
     // Here's how to add a purchased product as a LineItem
     public void addLineItem(Product product, int qty) {
@@ -65,5 +67,22 @@ public class Receipt {
 
     public double getSavings() {
         return moneySaved = grandTotal - saleGrandTotal;
+    }
+    
+    public double getProductUnitPrice() {
+        return product.getUnitPrice();
+    }
+    
+    public double getSalePrice() {
+        return product.getUnitPrice() * product.getDiscount();
+    }
+    
+    public void printReceiptLineItems() {
+         for (LineItem item : lineItems) {
+         System.out.println(this.getProduct() + "\t" + this.getQty() 
+                + "\t" + this.getProductUnitPrice() + "\t" 
+                + this.getSalePrice());
+        }
+        
     }
 }
